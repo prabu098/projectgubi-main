@@ -15,6 +15,10 @@
                             </div>
                         @endif
 
+
+
+
+
                         <form enctype="multipart/form-data" action="{{route('users.update',['id'=>$user->id])}}" method="POST">
                             @csrf
                             <input type="hidden" name="_method" value="PUT" class="form-control">

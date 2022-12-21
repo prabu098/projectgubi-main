@@ -45,7 +45,6 @@
                                     <td width="300px" height="auto">{{$users->kelas}}</td>
                                     <td width="300px" height="auto">{{$users->email}}</td>
                                     <td width="300px" height="auto">{{$users->status}}</td>
-
                                     <td>
                                         <a class="btn btn-info text-white btn-sm" href="{{route('users.edit',['id'=>$users->id])}}">Edit</a>
                                             <form onsubmit="return confirm('Delete this candidate permanently ?')" class="d-inline" action="{{route('users.destroy',['id'=>$users->id])}}" method="POST">
