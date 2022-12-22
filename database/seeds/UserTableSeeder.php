@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
     {
         $administrator = new App\User;
         $administrator->name = 'admin';
-        $administrator->email = 'prabu@admin';
+        $administrator->email = 'angga@admin.com';
         $administrator->password = \Hash::make('admin');
         $administrator->nim = '10117130';
         $administrator->kelas ='IF 4';

@@ -23,22 +23,22 @@ class UserController extends Controller
      */
     public function index()
     {
-        // if(request()->ajax()) {
-        //     $users = \App\User::query();
-        //     return DataTables::of($users)
-        //         ->addColumn('action', function ($users) {
-        //             return view('users.action', [
-        //                 'users' => $users,
-        //                 'url_edit' => route('users.edit', $users->id),
-        //                 'url_destroy' => route('users.destroy', $users->id)
-        //             ]);
-        //         })
-        //         ->rawColumns(['action'])
-        //         ->addIndexColumn()
-        //         ->make(true);
-        // }
-        $post=DB::table('users')->get();
-        return view('users.index',['users'=>$post]);
+         if(request()->ajax()) {
+             $users = \App\User::query();
+             return DataTables::of($users)
+                 ->addColumn('action', function ($users) {
+                     return view('users.action', [
+                         'users' => $users,
+                         'url_edit' => route('users.edit', $users->id),
+                         'url_destroy' => route('users.destroy', $users->id)
+                     ]);
+                 })
+                 ->rawColumns(['action'])
+                 ->addIndexColumn()
+                 ->make(true);
+         }
+//        $post=DB::table('users')->get();
+        return view('users.index');
     }
 
     /**
